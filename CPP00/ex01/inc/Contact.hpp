@@ -3,12 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 17:25:04 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/12 18:08:18 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/12 22:21:46 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef __CONTACT_HPP__
+#define __CONTACT_HPP__
 
 #include <string>
 using namespace std;
@@ -18,18 +21,25 @@ class Contact
     public:
         Contact();
         ~Contact();
-        
-        int     GetIndex(const Contact &C);
-        int     GetPhoneNumber(const Contact &C);
-        string  GetName(const Contact &C);
-        string  GetLastName(const Contact &C);
-        string  GetNickname(const Contact &C);
+
+        void	setName(const string name);
+		void	setLastName(const string lastname);
+		void	setNickName(const string nickname);
+		void	setPhoneNumber(const string phoneNumber);
+		void	setDarkestSecret(const string darkestsecret);
+		
+        const string  getName()const;
+        const string  getLastName()const;
+        const string  getNickname()const;
+        const string  getPhoneNumber()const;
+        const string  getDarkestSecret() const;
         
     private:
-        int     _index;
-        int     _phoneNumber;
         string  _name;
         string  _lastName;
         string  _nickname;
+        string	_phoneNumber;
         string  _darkestSecret;
 };
+
+#endif

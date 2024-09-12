@@ -3,33 +3,45 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lagea <lagea@student.42.fr>                +#+  +:+       +#+         #
+#    By: lagea < lagea@student.s19.be >             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/12 17:00:33 by lagea             #+#    #+#              #
-#    Updated: 2024/09/12 17:15:55 by lagea            ###   ########.fr        #
+#    Updated: 2024/09/12 22:53:43 by lagea            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-SRC = megaphone.cpp
-OBJ = $(SRC:.cpp=.o)
-CC = g++
-RM = rm -f
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+NAME 		= phonebook
 
-NAME = phonebook
+SRC_DIR 	= src
+INC_DIR		= include
+OBJ_DIR 	= obj
 
+SRC 		= 	$(SRC_DIR)/PhoneBook.cpp \
+				$(SRC_DIR)/Contact.cpp \
+				
+OBJ			= $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
+CC 			= c++
+RM 			= rm -f
+CPPFLAGS 	= -Wall -Wextra -Werror -std=c++98
+INCS 		= -I$(INC_DIR) -I.
+	
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@mkdir -p $(OBJ_DIR)
+	$(CC) $(CPPFLAGS) $(INCS) -c $< -o $@
+
 clean:
-	$(RM) $(OBJ)
+	$(RM) -r $(OBJ_DIR)
 
 fclean: clean
+	$(RM) -r $(OBJ_DIR)
 	$(RM) $(NAME)
 
-re: fclean $(NAME)
+re: fclean all
 
 .PHONY: all clean fclean re

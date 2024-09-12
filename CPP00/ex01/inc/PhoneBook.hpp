@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 17:25:07 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/12 17:58:16 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/12 22:42:34 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef __PHONEBOOK_HPP__
+#define __PHONEBOOK_HPP__
+
 #include "Contact.hpp"
+#include <iostream>
 
 class PhoneBook
 {
@@ -18,10 +22,16 @@ class PhoneBook
         PhoneBook();
         ~PhoneBook();
         
-        bool    AddContact(const PhoneBook &P);
-        void    SearchContact(const PhoneBook &P);
-        void    Exit(const PhoneBook &P);
+        bool    getInput(const string prompt, string &input);
+        void    addContact();
+        void    insertContact(const Contact &contact);
+        void    searchContact();
+        void    displayContact(int index);
+        void    displayContacts();
             
     private:
-        Contact arr[8];
+        Contact _contacts[8];
+        
 };
+
+#endif
