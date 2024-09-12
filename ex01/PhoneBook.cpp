@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/12 17:25:11 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/12 17:25:12 by lagea            ###   ########.fr       */
+/*   Created: 2024/09/12 17:26:37 by lagea             #+#    #+#             */
+/*   Updated: 2024/09/12 18:01:30 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "PhoneBook.hpp"
 
-int main(int ac, char *av[])
+PhoneBook::PhoneBook()
 {
-    int j;
-    int i = 0;
+    
+}
 
-    if (ac == 1)
-    {
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-        return 0;
-    }
-    while (av[++i])
-    {
-        j = -1;
-        while (av[i][++j])
-            std::cout << (char)std::toupper((int)av[i][j]);
-    }
-    std::cout << std::endl;
-    return 0;
+PhoneBook::~PhoneBook()
+{
+    
+}
+
+bool    PhoneBook::AddContact(const PhoneBook &P)
+{
+    
+}
+
+void    PhoneBook::SearchContact(const PhoneBook &P)
+{
+    
+}
+
+void    PhoneBook::Exit(const PhoneBook &P)
+{
+
 }
