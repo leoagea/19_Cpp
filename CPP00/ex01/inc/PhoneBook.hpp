@@ -6,7 +6,7 @@
 /*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 17:25:07 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/12 22:42:34 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/13 00:14:09 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ class PhoneBook
         void    displayContacts();
             
     private:
+        int     _contactCount;
+        int     _contactIndex;
         Contact _contacts[8];
         
 };

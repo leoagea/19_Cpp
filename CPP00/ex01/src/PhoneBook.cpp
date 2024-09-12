@@ -65,20 +65,66 @@ void PhoneBook::addContact()
 
 void PhoneBook::insertContact(const Contact &contact)
 {
-    
+    if (this->_contactIndex == 8)
+        this->_contactIndex = 0;
+    this->_contacts[this->_contactIndex] = contact;
+    this->_contactIndex++;
+    if (this->_contactCount < 8)
+        this->_contactCount++;
 }
 
 void PhoneBook::searchContact()
 {
+    int     index;
+    string  input;
 
+    if (this->_contactCount == 0)
+        std::cout << "Phone book is empty" << std::endl;
+    else
+        this->displayContacts();
+    do
+    {
+        if (!std::getline(std::cin, input))
+        {
+            std::cout << " " << std::endl;
+            exit(0);
+        }
+        if (!input.empty())
+        {
+            try
+            {
+                index = std::stoi(input);
+                if (index < 0 || index > this->_contactCount)
+                    std::cout << "Contact not found" << std::endl;
+                else
+                    break;
+            }
+            catch(const std::exception& e)
+            {
+                std::cerr << "Enter a numeric number instead" << std::endl;
+            }
+        }
+        else
+            std::cout << "Input cannot be empty" << std::endl;
+    } while (true);
+    this->displayContact(index);
 }
 
 void PhoneBook::displayContact(int index)
 {
+    Contact contact;
 
+    contact = this->_contacts[index];
+    std::cout 
+        << "\n"
+        << "First Name : " << contact.getName() << "\n"
+        << "Last Name : " << contact.getLastName() << "\n"
+        << "Nickname : " << contact.getNickname() << "\n"
+        << "Phone Number : " << contact.getPhoneNumber() << "\n"
+        << "Darkest secret : " << contact.getDarkestSecret() << "\n"
+        << std::endl;
 }
 
 void PhoneBook::displayContacts()
 {
-
 }
