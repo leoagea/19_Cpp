@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lagea < lagea@student.s19.be >             +#+  +:+       +#+         #
+#    By: lagea <lagea@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/12 17:00:33 by lagea             #+#    #+#              #
-#    Updated: 2024/09/12 22:53:43 by lagea            ###   ########.fr        #
+#    Updated: 2024/09/13 16:19:45 by lagea            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ SRC_DIR 	= src
 INC_DIR		= include
 OBJ_DIR 	= obj
 
-SRC 		= 	$(SRC_DIR)/PhoneBook.cpp \
+SRC 		= 	main.cpp \
+				$(SRC_DIR)/PhoneBook.cpp \
 				$(SRC_DIR)/Contact.cpp \
 				
 OBJ			= $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)

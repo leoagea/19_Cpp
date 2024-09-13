@@ -20,6 +20,17 @@ PhoneBook::~PhoneBook()
 {   
 }
 
+void PhoneBook::clearTerminal()
+{
+    #if defined _WIN32
+        system("cls");
+    #elif defined (__LINUX__) || defined(__gnu_linux__) || defined(__linux__)
+        system("clear");
+    #elif defined (__APPLE__)
+        system("clear");
+    #endif
+}
+
 bool PhoneBook::getInput(const string prompt, string &input)
 {
     std::cout << prompt;
@@ -60,6 +71,7 @@ void PhoneBook::addContact()
     contact.setDarkestSecret(input);
 
     this->insertContact(contact);
+    this->clearTerminal();
     std::cout << "Contact successfully added" << std::endl;
 }
 
@@ -79,22 +91,26 @@ void PhoneBook::searchContact()
     string  input;
 
     if (this->_contactCount == 0)
+    {
         std::cout << "Phone book is empty" << std::endl;
+        return ;
+    }
     else
         this->displayContacts();
     do
     {
+        std::cout << "\nContact Index : ";
         if (!std::getline(std::cin, input))
         {
             std::cout << " " << std::endl;
-            exit(0);
+            exit(1);
         }
         if (!input.empty())
         {
             try
             {
                 index = std::stoi(input);
-                if (index < 0 || index > this->_contactCount)
+                if (index < 0 || index >= this->_contactCount)
                     std::cout << "Contact not found" << std::endl;
                 else
                     break;
@@ -108,6 +124,7 @@ void PhoneBook::searchContact()
             std::cout << "Input cannot be empty" << std::endl;
     } while (true);
     this->displayContact(index);
+    this->clearTerminal();
 }
 
 void PhoneBook::displayContact(int index)
@@ -127,4 +144,25 @@ void PhoneBook::displayContact(int index)
 
 void PhoneBook::displayContacts()
 {
+    std::cout << "\n"
+        << std::setw(10) << "Index" << " | "
+        << std::setw(10) << "First Name" << " | "
+        << std::setw(10) << "Last Name" << " | "
+        << std::setw(10) << "Nickname" << std::endl;
+
+    for (int i = 0; i < this->_contactCount; i++)
+    {
+        std::cout << std::setw(10) << i << " | "
+            << std::setw(10) << formatString(this->_contacts[i].getName()) << " | "
+            << std::setw(10) << formatString(this->_contacts[i].getLastName()) << " | "
+            << std::setw(10) << formatString(this->_contacts[i].getNickname()) << std::endl;
+    }
+}
+
+const string PhoneBook::formatString(string string)
+{
+    if (string.size() > 10)
+        return string.substr(0, 9) + ".";
+    else
+        return string;
 }
