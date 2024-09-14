@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 17:18:23 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/13 18:50:47 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/15 00:33:10 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ Account::Account(int initial_deposit)
     this->_accountIndex = this->getNbAccounts();
     _nbAccounts++;
     this->_amount = initial_deposit;
+    _totalAmount += initial_deposit;
 }
 
 Account::~Account()
@@ -118,6 +119,22 @@ void Account::displayStatus() const
         << "amount:" << this->_amount << ";" 
         << "deposits:" << this->_nbDeposits << ";" 
         << "withdrawals:" << this->_nbWithdrawals << std::endl;
+}
+
+void Account::_displayTimestamp(void)
+{
+	time_t now = time(0);
+	tm *ltm = localtime(&now);
+	std::cout 
+		<< "[" 
+		<< 1900 + ltm->tm_year
+		<< std::setw(2) << std::setfill('0') << ltm->tm_mon
+		<< std::setw(2) << std::setfill('0') << ltm->tm_mday
+		<< "_"
+		<< std::setw(2) << std::setfill('0') << ltm->tm_hour
+		<< std::setw(2) << std::setfill('0') << ltm->tm_min
+		<< std::setw(2) << std::setfill('0') << ltm->tm_sec
+		<< "] ";
 }
 
 
