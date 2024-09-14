@@ -31,7 +31,7 @@ void PhoneBook::clearTerminal()
     #endif
 }
 
-bool PhoneBook::getInput(const string prompt, string &input)
+bool PhoneBook::getInput(const std::string prompt, std::string &input)
 {
     std::cout << prompt;
     if (std::getline(std::cin, input))
@@ -45,7 +45,7 @@ bool PhoneBook::getInput(const string prompt, string &input)
     }
     else
     {
-        if (cin.eof())
+        if (std::cin.eof())
         {
             this->~PhoneBook();
             exit(0);
@@ -57,7 +57,7 @@ bool PhoneBook::getInput(const string prompt, string &input)
 void PhoneBook::addContact()
 {
     Contact contact;
-    string input;
+    std::string input;
 
     while(!getInput("First Name : ", input));
     contact.setName(input);
@@ -88,7 +88,7 @@ void PhoneBook::insertContact(const Contact &contact)
 void PhoneBook::searchContact()
 {
     int     index;
-    string  input;
+    std::string  input;
 
     if (this->_contactCount == 0)
     {
@@ -159,7 +159,7 @@ void PhoneBook::displayContacts()
     }
 }
 
-const string PhoneBook::formatString(string string)
+const std::string PhoneBook::formatString(std::string string)
 {
     if (string.size() > 10)
         return string.substr(0, 9) + ".";

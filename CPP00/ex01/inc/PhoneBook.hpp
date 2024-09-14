@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 17:25:07 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/13 16:58:50 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/15 00:25:24 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ class PhoneBook
         PhoneBook();
         ~PhoneBook();
         
-        void            clearTerminal();
-        bool            getInput(const string prompt, string &input);
-        void            addContact();
-        void            insertContact(const Contact &contact);
-        void            searchContact();
-        void            displayContact(int index);
-        void            displayContacts();
-        const string    formatString(string string);
+        void                    clearTerminal();
+        bool                    getInput(const std::string prompt, std::string &input);
+        void                    addContact();
+        void                    insertContact(const Contact &contact);
+        void                    searchContact();
+        void                    displayContact(int index);
+        void                    displayContacts();
+        const std::string       formatString(std::string string);
                     
     private:
         int     _contactCount;
