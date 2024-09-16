@@ -6,13 +6,13 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 16:04:33 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/13 16:55:56 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/16 12:04:41 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/PhoneBook.hpp"
 
-int resolveOptions(const string input)
+int resolveOptions(const std::string input)
 {
     if (input == "ADD")
         return ADD;
@@ -27,10 +27,10 @@ int main()
 {
     PhoneBook phonebook;
     
-    string input;
+    std::string input;
     do
     {
-        std::cout << "\nChoose an option between ADD, SEARCH and EXIT" << std::endl;
+        std::cout << "\033[33m\nChoose an option between ADD, SEARCH and EXIT\033[0m" << std::endl;
         if (!std::getline(std::cin, input))
         {
             std::cout << " " << std::endl;
