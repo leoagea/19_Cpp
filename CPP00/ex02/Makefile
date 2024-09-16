@@ -6,12 +6,12 @@
 #    By: lagea <lagea@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/12 17:00:33 by lagea             #+#    #+#              #
-#    Updated: 2024/09/13 18:11:44 by lagea            ###   ########.fr        #
+#    Updated: 2024/09/16 12:40:26 by lagea            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME 		= phonebook
+NAME 		= account
 
 SRC_DIR 	= src
 INC_DIR		= include
