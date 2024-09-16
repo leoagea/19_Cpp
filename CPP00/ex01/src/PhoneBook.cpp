@@ -124,8 +124,7 @@ void PhoneBook::searchContact()
             std::cout << "Input cannot be empty" << std::endl;
     } while (true);
     this->displayContact(index);
-    this->clearTerminal();
-}
+} 
 
 void PhoneBook::displayContact(int index)
 {
