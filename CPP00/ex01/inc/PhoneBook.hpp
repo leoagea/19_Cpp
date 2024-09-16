@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
+/*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 17:25:07 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/15 00:25:24 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/16 15:44:59 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 enum Options {
     ADD = 1,
     SEARCH,
-    EXIT,
+    EXIT
 };
 
 class PhoneBook
@@ -31,7 +31,8 @@ class PhoneBook
         ~PhoneBook();
         
         void                    clearTerminal();
-        bool                    getInput(const std::string prompt, std::string &input);
+        bool                    parseInput(const std::string prompt, std::string &input);
+        bool                    parsePhoneNumber(const std::string prompt, std::string &input);
         void                    addContact();
         void                    insertContact(const Contact &contact);
         void                    searchContact();

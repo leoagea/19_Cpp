@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 17:26:51 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/16 11:13:57 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/16 15:38:04 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void Contact::setNickName(const std::string nickname)
 
 void Contact::setPhoneNumber(const std::string phonenumber)
 {
-    this->_phoneNumber = phonenumber;
+    this->_phoneNumber = std::atoi(phonenumber.c_str());
 }
 
 void Contact::setDarkestSecret(const std::string darkestsecret)

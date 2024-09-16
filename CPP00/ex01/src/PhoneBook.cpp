@@ -31,7 +31,7 @@ void PhoneBook::clearTerminal()
     #endif
 }
 
-bool PhoneBook::getInput(const std::string prompt, std::string &input)
+bool PhoneBook::parseInput(const std::string prompt, std::string &input)
 {
     std::cout << prompt;
     if (std::getline(std::cin, input))
@@ -54,20 +54,56 @@ bool PhoneBook::getInput(const std::string prompt, std::string &input)
         return false;
     }
 }
+
+bool PhoneBook::parsePhoneNumber(const std::string prompt, std::string &input)
+{
+    int i;
+
+    std::cout << prompt;
+    if (std::getline(std::cin, input))
+    {
+        if (input.empty())
+        {
+            std::cout << "Empty input : try again" << std::endl;
+            return false;
+        }
+        i = -1;
+        while(input.c_str()[++i])
+        {
+            if (!std::isdigit((int) input.c_str()[i])) 
+            {
+                std::cerr << "Enter a numeric number instead" << std::endl;
+                return false;
+            }
+        }
+        return true;
+    }
+    else
+    {
+        if (std::cin.eof())
+        {
+            this->~PhoneBook();
+            exit(0);
+        }
+        std::cin.clear();
+        return false;
+    }
+}
+
 void PhoneBook::addContact()
 {
     Contact contact;
     std::string input;
 
-    while(!getInput("First Name : ", input));
+    while(!parseInput("First Name : ", input));
     contact.setName(input);
-    while(!getInput("Last Name : ", input));
+    while(!parseInput("Last Name : ", input));
     contact.setLastName(input);
-    while(!getInput("NickName : ", input));
+    while(!parseInput("NickName : ", input));
     contact.setNickName(input);
-    while(!getInput("Phone Number : ", input));
+    while(!parsePhoneNumber("Phone Number : ", input));
     contact.setPhoneNumber(input);
-    while(!getInput("Darkest Secret : ", input));
+    while(!parseInput("Darkest Secret : ", input));
     contact.setDarkestSecret(input);
 
     this->insertContact(contact);
@@ -87,6 +123,7 @@ void PhoneBook::insertContact(const Contact &contact)
 
 void PhoneBook::searchContact()
 {
+    int     i;
     int     index;
     std::string  input;
 
@@ -97,32 +134,30 @@ void PhoneBook::searchContact()
     }
     else
         this->displayContacts();
-    do
+    parseNbr :
+    std::cout << "\nContact Index : ";
+    if (!std::getline(std::cin, input))
     {
-        std::cout << "\nContact Index : ";
-        if (!std::getline(std::cin, input))
+        std::cout << " " << std::endl;
+        exit(1);
+    }
+    if (!input.empty())
+    { 
+        index = std::atoi(input.c_str());
+        i = -1;
+        while(input.c_str()[++i])
         {
-            std::cout << " " << std::endl;
-            exit(1);
-        }
-        if (!input.empty())
-        {
-            try
-            {
-                index = std::stoi(input);
-                if (index < 0 || index >= this->_contactCount)
-                    std::cout << "Contact not found" << std::endl;
-                else
-                    break;
-            }
-            catch(const std::exception& e)
+            if (!std::isdigit((int) input.c_str()[i])) 
             {
                 std::cerr << "Enter a numeric number instead" << std::endl;
+                goto parseNbr;
             }
         }
-        else
-            std::cout << "Input cannot be empty" << std::endl;
-    } while (true);
+        if (index < 0 || index >= this->_contactCount)
+            std::cout << "Contact not found" << std::endl;
+    }
+    else
+        std::cout << "Input cannot be empty" << std::endl;
     this->displayContact(index);
 } 
 
