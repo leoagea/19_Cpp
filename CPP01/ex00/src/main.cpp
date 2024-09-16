@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
+/*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 01:18:04 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/15 01:24:22 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/16 18:20:45 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int main()
 {
-	Zombie nicolas = Zombie("Gabriel");
-	Zombie *lucas = newZombie("Edouardo");
+	Zombie Gabriel = Zombie("Gabriel");
+	Zombie *Eduardo = newZombie("Edouardo");
 	randomChump("Vicente");
 
-	nicolas.announce();
-	lucas->announce();
+	Gabriel.announce();
+	Eduardo->announce();
 
-	delete lucas;
+	delete Eduardo;
 
 	return 0;
 }

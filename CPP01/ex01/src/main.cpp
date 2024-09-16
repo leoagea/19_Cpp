@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
+/*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 01:18:04 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/15 03:03:20 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/16 14:13:14 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main()
         {
             try 
             {
-                num = std::stoi(nbr);
+                num = std::atoi(nbr.c_str());
             }
             catch (const std::invalid_argument& e) 
             {
