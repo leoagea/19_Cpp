@@ -6,14 +6,14 @@
 #    By: lagea <lagea@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/12 17:00:33 by lagea             #+#    #+#              #
-#    Updated: 2024/09/12 17:00:35 by lagea            ###   ########.fr        #
+#    Updated: 2024/09/16 15:41:08 by lagea            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 SRC = megaphone.cpp
 OBJ = $(SRC:.cpp=.o)
-CC = g++
+CC = c++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 

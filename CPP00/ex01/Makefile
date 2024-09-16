@@ -6,7 +6,7 @@
 #    By: lagea <lagea@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/12 17:00:33 by lagea             #+#    #+#              #
-#    Updated: 2024/09/13 16:19:45 by lagea            ###   ########.fr        #
+#    Updated: 2024/09/16 14:10:29 by lagea            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC 		= 	main.cpp \
 OBJ			= $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 CC 			= c++
 RM 			= rm -f
-CPPFLAGS 	= -Wall -Wextra -Werror -std=c++98
+CPPFLAGS 	= -Wall -Wextra -Werror -std=c++98 -pedantic
 INCS 		= -I$(INC_DIR) -I.
 	
 all: $(NAME)
