@@ -3,39 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:55:56 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/17 18:14:52 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/17 21:45:45 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Fixed.hpp"
-
-const int Fixed::_fractionalBits = 8;
-
 
 Fixed::Fixed() : _fixedPointNumber(0)
 {
     std::cout << "Default constructor called" << std::endl;
 }
 
+Fixed::Fixed(const int d)
+{
+    std::cout << "Int constructor called" << std::endl;
+    this->_fixedPointNumber = d << _fractionalBits;
+}
+
+Fixed::Fixed(const float f)
+{
+    std::cout << "Float constructor called" << std::endl;   
+    this->_fixedPointNumber = roundf(f * (1 << _fractionalBits));
+}
+
 Fixed::Fixed(const Fixed &t)
 {
     std::cout << "Copy constructor called" << std::endl;
     *this = t;    
-}
-
-Fixed::Fixed(const int d) : _fixedPointNumber(d * pow(2, _fractionalBits))
-{
-    // this->_fixedPointNumber = d << this->_fractionalBits;
-    std::cout << "Int constructor called" << std::endl;
-}
-
-Fixed::Fixed(const float f) : _fixedPointNumber(f * pow(2, _fractionalBits))
-{
-    // this->_fixedPointNumber = f * (float)(1 << this->_fractionalBits);
-    std::cout << "Copy constructor called" << std::endl;   
 }
 
 Fixed &Fixed::operator=(const Fixed &t)
@@ -67,14 +64,12 @@ void Fixed::setRawBits( int const raw )
 
 float Fixed::toFloat() const
 {
-    // return (float)this->_fixedPointNumber / (float)(1 << this->_fractionalBits);
-    return _fixedPointNumber * pow(2, -_fractionalBits);
+    return static_cast<float>(_fixedPointNumber) / (1 << _fractionalBits);
 }
 
 int Fixed::toInt() const
 {
-    // return this->_fixedPointNumber << this->_fractionalBits;
-    return _fixedPointNumber * pow(2, -_fractionalBits);
+    return _fixedPointNumber >> _fractionalBits;
 }
 
 std::ostream &operator<<(std::ostream &out,const Fixed &t)
