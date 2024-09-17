@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 17:25:04 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/16 14:09:56 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/17 13:52:06 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Contact
         std::string  _name;
         std::string  _lastName;
         std::string  _nickname;
-        std::string	_phoneNumber;
+        std::string	 _phoneNumber;
         std::string  _darkestSecret;
 };
 
