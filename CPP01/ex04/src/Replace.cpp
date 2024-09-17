@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:55:56 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/16 18:27:11 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/17 18:11:18 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void Replace::replace()
 
     result.append(_newContent, prev, std::string::npos);
     _newContent = result;
-    std::cout << _newContent;
 }
 
 void Replace::writeToFile() 
