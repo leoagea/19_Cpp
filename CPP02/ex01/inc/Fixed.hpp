@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
+/*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:55:01 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/16 23:18:14 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/17 18:04:27 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <math.h>
 
 class Fixed
 {
     public:
         Fixed();
-        Fixed(const int d);
-        Fixed(const float f);
+        Fixed(int d);
+        Fixed(float f);
         Fixed(const Fixed &t);
         Fixed &operator=(const Fixed &t);
         ~Fixed();
@@ -35,8 +36,10 @@ class Fixed
         
     private:
         int _fixedPointNumber;
-        static const int _fractionalBits = 8;
+        static const int _fractionalBits;
     
 };
+
+std::ostream &operator<<(std::ostream &out,const Fixed &t);
 
 #endif

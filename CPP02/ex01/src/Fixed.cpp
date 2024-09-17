@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
+/*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:55:56 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/16 23:17:33 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/17 18:14:52 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Fixed.hpp"
+
+const int Fixed::_fractionalBits = 8;
+
 
 Fixed::Fixed() : _fixedPointNumber(0)
 {
@@ -23,13 +26,15 @@ Fixed::Fixed(const Fixed &t)
     *this = t;    
 }
 
-Fixed::Fixed(const int d)
+Fixed::Fixed(const int d) : _fixedPointNumber(d * pow(2, _fractionalBits))
 {
+    // this->_fixedPointNumber = d << this->_fractionalBits;
     std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float f)
+Fixed::Fixed(const float f) : _fixedPointNumber(f * pow(2, _fractionalBits))
 {
+    // this->_fixedPointNumber = f * (float)(1 << this->_fractionalBits);
     std::cout << "Copy constructor called" << std::endl;   
 }
 
@@ -62,10 +67,17 @@ void Fixed::setRawBits( int const raw )
 
 float Fixed::toFloat() const
 {
-    
+    // return (float)this->_fixedPointNumber / (float)(1 << this->_fractionalBits);
+    return _fixedPointNumber * pow(2, -_fractionalBits);
 }
 
 int Fixed::toInt() const
 {
-    
+    // return this->_fixedPointNumber << this->_fractionalBits;
+    return _fixedPointNumber * pow(2, -_fractionalBits);
+}
+
+std::ostream &operator<<(std::ostream &out,const Fixed &t)
+{
+    return (out << t.toFloat());
 }
