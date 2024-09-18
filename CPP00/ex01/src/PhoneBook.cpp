@@ -82,10 +82,8 @@ bool PhoneBook::parsePhoneNumber(const std::string prompt, std::string &input)
     {
         if (std::cin.eof())
         {
-            this->~PhoneBook();
             exit(0);
         }
-        std::cin.clear();
         return false;
     }
 }

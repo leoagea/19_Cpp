@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 17:18:23 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/16 12:45:49 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/18 19:53:39 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,7 +136,7 @@ void Account::_displayTimestamp(void)
 	std::cout 
 		<< "[" 
 		<< 1900 + ltm->tm_year
-		<< std::setw(2) << std::setfill('0') << ltm->tm_mon
+		<< std::setw(2) << std::setfill('0') << 1 + ltm->tm_mon
 		<< std::setw(2) << std::setfill('0') << ltm->tm_mday
 		<< "_"
 		<< std::setw(2) << std::setfill('0') << ltm->tm_hour
