@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 17:13:34 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/16 18:26:33 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/19 13:48:06 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void Weapon::setType(const std::string type)
     this->_type = type; 
 }
 
-const std::string Weapon::getType()
+const std::string &Weapon::getType()
 {
     std::string &ref = this->_type;
     return ref;
