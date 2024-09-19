@@ -6,7 +6,7 @@
 #    By: lagea <lagea@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/12 17:00:33 by lagea             #+#    #+#              #
-#    Updated: 2024/09/16 18:19:58 by lagea            ###   ########.fr        #
+#    Updated: 2024/09/19 13:29:45 by lagea            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC 		= 	$(SRC_DIR)/main.cpp \
 				$(SRC_DIR)/Harl.cpp \
 				
 OBJ			= $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
+DEPS 		= $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.d)
 CC 			= c++
 RM 			= rm -f
 CPPFLAGS 	= -Wall -Wextra -Werror -std=c++98 -pedantic
@@ -32,7 +33,12 @@ $(NAME): $(OBJ)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CPPFLAGS) $(INCS) -c $< -o $@
+	$(CC) $(CPPFLAGS) $(INCS) -MMD -MP -c $< -o $@
+
+-include $(DEPS)
+
+run: all
+	./$(NAME)
 
 clean:
 	$(RM) -r $(OBJ_DIR)
