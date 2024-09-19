@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:55:56 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/17 18:11:18 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/19 15:25:41 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,16 @@ void Replace::read()
 
     if(!file.is_open())
     {
-        std::cerr << "Cannot open file: " << this->_filePath << std::endl;
+        std::cerr << "Error: Cannot open file: " << this->_filePath << std::endl;
         exit(1); 
     }
-    
+    file.seekg(0, file.end);
+    if (file.tellg() == 0)
+    {
+        std::cerr << "Error: File is empty" << std::endl;
+        exit(1); 
+    }
+    file.seekg(0, file.beg);
     std::stringstream buffer;
     buffer << file.rdbuf();
     this->_newContent = buffer.str();
@@ -40,7 +46,7 @@ void Replace::replace()
 {
     if (_s1.empty()) 
     {
-        std::cerr << "Error: file is empty" << std::endl;
+        std::cerr << "Error: s1 is empty" << std::endl;
         exit(1); 
     }
 
