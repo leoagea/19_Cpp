@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:55:01 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/19 14:46:36 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/19 17:56:13 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ class Fixed
         
     private:
     
-        int _fixedPointNumber;
-        static const int _fractionalBits = 8;
+        int _rawBits;
+        static const int _fracBits = 8;
     
 };
 
