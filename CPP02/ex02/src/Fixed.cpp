@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:55:56 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/18 17:32:48 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/19 16:41:13 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,30 +109,34 @@ bool Fixed::operator!=(const Fixed &t) const
 
 Fixed Fixed::operator+(const Fixed &t) const
 {
-    Fixed result;
-    result._fixedPointNumber = this->_fixedPointNumber + t._fixedPointNumber;
-    return result;
+    // Fixed result;
+    // result._fixedPointNumber = this->_fixedPointNumber + t._fixedPointNumber;
+    // return result;
+    return (Fixed(this->toFloat() + t.toFloat()));
 }
 
 Fixed Fixed::operator-(const Fixed &t) const
 {
-    Fixed result;
-    result._fixedPointNumber = this->_fixedPointNumber - t._fixedPointNumber;
-    return result;
+    // Fixed result;
+    // result._fixedPointNumber = this->_fixedPointNumber - t._fixedPointNumber;
+    // return result;
+    return (Fixed(this->toFloat() - t.toFloat()));
 }
 
 Fixed Fixed::operator*(const Fixed &t) const
 {
-    Fixed result;
-    result._fixedPointNumber = this->_fixedPointNumber * t._fixedPointNumber;
-    return result;
+    // Fixed result;
+    // result._fixedPointNumber = this->_fixedPointNumber * t._fixedPointNumber;
+    // return result;
+    return (Fixed(this->toFloat() * t.toFloat()));
 }
 
 Fixed Fixed::operator/(const Fixed &t) const
 {
-    Fixed result;
-    result._fixedPointNumber = this->_fixedPointNumber / t._fixedPointNumber;
-    return result;
+    // Fixed result;
+    // result._fixedPointNumber = this->_fixedPointNumber / t._fixedPointNumber;
+    // return result;
+    return (Fixed(this->toFloat() / t.toFloat()));
 }
 
 Fixed &Fixed::operator++()
@@ -159,4 +163,24 @@ Fixed Fixed::operator--(int)
     Fixed temp = *this;
     --this->_fixedPointNumber;
     return temp;
+}
+
+Fixed &Fixed::min(Fixed &f1, Fixed &f2)
+{
+    return (f1._fixedPointNumber < f2._fixedPointNumber) ? f1 : f2;
+}
+
+const Fixed &Fixed::min(const Fixed &f1, const Fixed &f2)
+{
+    return (f1._fixedPointNumber < f2._fixedPointNumber) ? f1 : f2;
+}
+
+Fixed &Fixed::max(Fixed &f1, Fixed &f2)
+{
+    return (f1._fixedPointNumber > f2._fixedPointNumber) ? f1 : f2;
+}
+
+const Fixed &Fixed::max(const Fixed &f1, const Fixed &f2)
+{
+    return (f1._fixedPointNumber > f2._fixedPointNumber) ? f1 : f2;
 }

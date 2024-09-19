@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:55:01 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/18 17:24:58 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/19 14:46:36 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 class Fixed
 {
     public:
+
         Fixed();
         Fixed(int d);
         Fixed(float f);
@@ -49,9 +50,14 @@ class Fixed
         Fixed operator++(int); //postifx
         Fixed &operator--();
         Fixed operator--(int);
-
+        
+        static Fixed &min(Fixed &f1, Fixed &f2);
+        static const Fixed &min(const Fixed &f1, const Fixed &f2);
+        static Fixed &max(Fixed &f1, Fixed &f2);
+        static const Fixed &max(const Fixed &f1, const Fixed &f2);
         
     private:
+    
         int _fixedPointNumber;
         static const int _fractionalBits = 8;
     
