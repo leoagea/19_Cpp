@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 03:24:19 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/16 18:27:33 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/19 13:31:36 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,15 @@ int main()
         if (!std::getline(std::cin, input))
         {
             std::cout << " " << std::endl;
-            exit(1);  
+            return 0;  
         }
         if (std::cin.eof())
         {
-            harl.~Harl();
-            exit(1);  
+            return 0;  
         }
         harl.complain(input);
         
     }while(true);
+
+    return 0;
 }
