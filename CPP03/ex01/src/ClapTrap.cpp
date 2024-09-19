@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
+/*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 17:13:34 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/17 23:02:02 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/19 18:24:53 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void ClapTrap::setEnergyPoints(unsigned int amount)
 
 void ClapTrap::setAttackDamage(unsigned int amount)
 {
-    this->_energyPoints = amount;
+    this->_attackDamage = amount;
 }
 
 std::string ClapTrap::getName(void) const
