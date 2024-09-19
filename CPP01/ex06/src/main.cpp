@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 03:24:19 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/16 18:14:25 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/19 15:39:10 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,11 @@
 
 int dispatchError(const std::string input)
 {
-    if (input == "DEBUG")
-        return 0;
-    else if (input == "INFO")
-        return 1;
-    else if (input == "WARNING")
-        return 2;
-    else if (input == "ERROR")
-        return 3;
+    std::string arr[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    for (int i = 0; i < 4; i++){
+        if (arr[i] == input)
+            return i;
+    }
     return -1;
 }
 
@@ -33,7 +30,10 @@ int main(int ac, char **av)
     int dispatch;
     
     if (ac != 2)
-        exit(1);
+    {
+        std::cerr << "Error: too many argument: expected 2" << std::endl;
+        return 0;
+    }
     dispatch = dispatchError(av[1]);
     switch (dispatch)
     {
@@ -47,7 +47,8 @@ int main(int ac, char **av)
             harl.complain("ERROR");
             break;
         default:
-            std::cout << "Unknown level: " << av[1] << std::endl;
+            std::cerr << "Error: Unknown level: " << av[1] << std::endl;
             break;
     }
+    return 0;
 }
