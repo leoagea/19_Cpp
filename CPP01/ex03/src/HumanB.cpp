@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 17:25:15 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/16 18:21:50 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/19 15:26:30 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void HumanB::attack() const
             << this->_weapon->getType() << std::endl;
     }
     else
-        std::cout << this->_name << "attacks" << std::endl;
+        std::cout << this->_name << " attacks" << std::endl;
 }
 
 void HumanB::setWeapon(Weapon &weapon)
