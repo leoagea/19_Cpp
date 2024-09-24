@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:55:56 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/19 17:56:13 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/24 14:51:58 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,33 +101,21 @@ bool Fixed::operator!=(const Fixed &t) const
 
 Fixed Fixed::operator+(const Fixed &t) const
 {
-    // Fixed result;
-    // result._rawBits = this->_rawBits + t._rawBits;
-    // return result;
     return (Fixed(this->toFloat() + t.toFloat()));
 }
 
 Fixed Fixed::operator-(const Fixed &t) const
 {
-    // Fixed result;
-    // result._rawBits = this->_rawBits - t._rawBits;
-    // return result;
     return (Fixed(this->toFloat() - t.toFloat()));
 }
 
 Fixed Fixed::operator*(const Fixed &t) const
 {
-    // Fixed result;
-    // result._rawBits = this->_rawBits * t._rawBits;
-    // return result;
     return (Fixed(this->toFloat() * t.toFloat()));
 }
 
 Fixed Fixed::operator/(const Fixed &t) const
 {
-    // Fixed result;
-    // result._rawBits = this->_rawBits / t._rawBits;
-    // return result;
     return (Fixed(this->toFloat() / t.toFloat()));
 }
 

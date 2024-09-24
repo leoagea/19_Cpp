@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:55:01 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/19 17:56:13 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/24 14:49:05 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ class Fixed
         float toFloat( void ) const;
         int toInt( void ) const;
         
-        friend std::ostream &operator<<(std::ostream &out,const Fixed &t);
         bool operator>(const Fixed &t) const;
         bool operator<(const Fixed &t) const;
         bool operator>=(const Fixed &t) const;
@@ -63,5 +62,6 @@ class Fixed
     
 };
 
+std::ostream &operator<<(std::ostream &out,const Fixed &t);
 
 #endif

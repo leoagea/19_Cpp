@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 19:55:56 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/19 17:56:13 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/24 14:47:50 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,11 @@ Fixed::~Fixed()
 
 int Fixed::getRawBits( void ) const
 {
-    std::cout << "getRawBits member function called" << std::endl;
-    return this->_rawBits;
+    return this->_rawBits;                       
 }
 
 void Fixed::setRawBits( int const raw )
 {
-    std::cout << "setRawBits member function called" << std::endl;
     this->_rawBits = raw;
 }
 
@@ -109,33 +107,21 @@ bool Fixed::operator!=(const Fixed &t) const
 
 Fixed Fixed::operator+(const Fixed &t) const
 {
-    // Fixed result;
-    // result._rawBits = this->_rawBits + t._rawBits;
-    // return result;
     return (Fixed(this->toFloat() + t.toFloat()));
 }
 
 Fixed Fixed::operator-(const Fixed &t) const
 {
-    // Fixed result;
-    // result._rawBits = this->_rawBits - t._rawBits;
-    // return result;
     return (Fixed(this->toFloat() - t.toFloat()));
 }
 
 Fixed Fixed::operator*(const Fixed &t) const
 {
-    // Fixed result;
-    // result._rawBits = this->_rawBits * t._rawBits;
-    // return result;
     return (Fixed(this->toFloat() * t.toFloat()));
 }
 
 Fixed Fixed::operator/(const Fixed &t) const
 {
-    // Fixed result;
-    // result._rawBits = this->_rawBits / t._rawBits;
-    // return result;
     return (Fixed(this->toFloat() / t.toFloat()));
 }
 
