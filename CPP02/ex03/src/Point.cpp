@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 16:54:51 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/19 17:39:25 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/25 13:50:24 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ Point::Point(const Point &other)
 
 Point &Point::operator=(const Point &other)
 {
-    (void) other;
+    if (this != &other){
+        const_cast<Fixed &>(_x) = other.getX();
+        const_cast<Fixed &>(_y) = other.getY();
+    }
     return *this;
 }
 
