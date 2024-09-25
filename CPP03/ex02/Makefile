@@ -6,7 +6,7 @@
 #    By: lagea <lagea@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/12 17:00:33 by lagea             #+#    #+#              #
-#    Updated: 2024/09/19 18:11:28 by lagea            ###   ########.fr        #
+#    Updated: 2024/09/25 17:34:47 by lagea            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ OBJ_DIR 	= obj
 SRC 		= 	$(SRC_DIR)/main.cpp \
 				$(SRC_DIR)/ClapTrap.cpp \
 				$(SRC_DIR)/ScavTrap.cpp \
+				$(SRC_DIR)/FragTrap.cpp \
 				
 OBJ			= $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 DEPS 		= $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.d)
