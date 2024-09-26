@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 17:13:34 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/19 18:24:53 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/26 17:28:17 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,47 +44,6 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &c)
 ClapTrap::~ClapTrap()
 {
     std::cout << "ClapTrap Destructor called" << std::endl;
-}
-
-
-void ClapTrap::setName(std::string name)
-{
-    this->_name = name;
-}
-
-void ClapTrap::setHitPoints(unsigned int amount)
-{
-    this->_hitPoints = amount;
-}
-
-void ClapTrap::setEnergyPoints(unsigned int amount)
-{
-    this->_energyPoints = amount;
-}
-
-void ClapTrap::setAttackDamage(unsigned int amount)
-{
-    this->_attackDamage = amount;
-}
-
-std::string ClapTrap::getName(void) const
-{
-    return this->_name;
-}
-
-unsigned int ClapTrap::getHitPoints(void) const
-{
-    return this->_hitPoints;
-}
-
-unsigned int ClapTrap::getEnergyPoints(void) const
-{
-    return this->_energyPoints;
-}
-
-unsigned int ClapTrap::getAttackDamage(void) const
-{
-    return this->_attackDamage;    
 }
 
 void ClapTrap::attack(const std::string &target)

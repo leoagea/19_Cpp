@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
+/*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 17:11:22 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/17 23:13:34 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/26 17:23:51 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class ScavTrap : public ClapTrap
         ScavTrap &operator=(const ScavTrap &t);
         ~ScavTrap();
         
+        void attack(const std::string &target);
         void guardGate(void);
 };
 

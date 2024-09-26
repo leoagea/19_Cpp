@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 17:11:10 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/19 18:26:03 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/26 17:28:00 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,6 @@ int main()
     {
         ScavTrap a;
         ScavTrap b("Zero");
-        std::cout 
-            << "Name: " << b.getName() << std::endl
-            << "HP: " << b.getHitPoints() << std::endl
-            << "EP: " << b.getEnergyPoints() << std::endl
-            << "AD: " << b.getAttackDamage() << std::endl;
-            
         ScavTrap c(b);
         ScavTrap d = c;
 
