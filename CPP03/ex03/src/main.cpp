@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 17:11:10 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/25 17:35:47 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/30 11:13:28 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,33 @@ int	main(void)
 	std::string s3 = "Fred";
 	std::string s4 = "Diego";
 
+	ClapTrap clap(s1);
+	std::cout
+		<< "ClapTrap hp : " << clap.getHitPoints() << std::endl
+		<< "ClapTrap ep : " << clap.getEnergyPoints() << std::endl
+		<< "ClapTrap ad : " << clap.getAttackDamage() << std::endl;
+
+	ScavTrap scav(s3);
+	std::cout
+		<< "ScavTrap hp : " << scav.getHitPoints() << std::endl
+		<< "ScavTrap ep : " << scav.getEnergyPoints() << std::endl
+		<< "ScavTrap ad : " << scav.getAttackDamage() << std::endl;
+		
+	FragTrap frag(s2);
+	std::cout
+		<< "Fragtrap hp : " << frag.getHitPoints() << std::endl
+		<< "Fragtrap ep : " << frag.getEnergyPoints() << std::endl
+		<< "Fragtrap ad : " << frag.getAttackDamage() << std::endl;
+
 	// Constructors
 	DiamondTrap	diamondtrap(s4);
 	std::cout << std::endl;
-
+	diamondtrap.whoAmI();
+	std::cout
+		<< "Diamodtrap hp : " << diamondtrap.getHitPoints() << std::endl
+		<< "Diamodtrap ep : " << diamondtrap.getEnergyPoints() << std::endl
+		<< "Diamodtrap ad : " << diamondtrap.getAttackDamage() << std::endl;
+		
 	std::cout << "\n\n";
 	
 	// Repairs

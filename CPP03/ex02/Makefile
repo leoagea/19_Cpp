@@ -6,12 +6,12 @@
 #    By: lagea <lagea@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/12 17:00:33 by lagea             #+#    #+#              #
-#    Updated: 2024/09/25 17:34:47 by lagea            ###   ########.fr        #
+#    Updated: 2024/09/30 11:04:17 by lagea            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME 		= Scavtrap
+NAME 		= FragTrap
 
 SRC_DIR 	= src
 INC_DIR		= include

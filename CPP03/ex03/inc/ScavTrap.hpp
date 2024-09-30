@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 17:11:22 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/23 13:33:23 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/30 11:30:10 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class ScavTrap : virtual public ClapTrap
         ScavTrap &operator=(const ScavTrap &t);
         ~ScavTrap();
         
+        void attack(const std::string &target);
         void guardGate(void);
 };
 

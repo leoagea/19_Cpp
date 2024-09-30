@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 17:11:22 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/23 13:38:42 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/30 11:48:51 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ class DiamondTrap : public FragTrap, public ScavTrap
 {
     public:
     
-        using FragTrap::_hitPoints;
-        using ScavTrap::_energyPoints;
-        using FragTrap::_attackDamage;
-        using ScavTrap::attack;
+        // using FragTrap::_hitPoints;
+        // using ScavTrap::_energyPoints;
+        // using FragTrap::_attackDamage;
+        // using ScavTrap::attack;
 
         DiamondTrap();   
         DiamondTrap(std::string name);   
