@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 14:57:25 by lagea             #+#    #+#             */
-/*   Updated: 2024/10/01 16:35:07 by lagea            ###   ########.fr       */
+/*   Updated: 2024/10/01 17:40:53 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ class Character : public ICharacter
         void use(int idx, ICharacter& target);
         
         static AMateria *onFloor[MAX_FLOOR];
-        
     private:
         std::string _name;
         AMateria *_inventory[4];
+        static int _nbCharacter;
 };
 
 #endif
