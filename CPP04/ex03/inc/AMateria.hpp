@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 19:09:17 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/30 12:18:04 by lagea            ###   ########.fr       */
+/*   Updated: 2024/10/01 16:40:15 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "ICharacter.hpp"
 #include "IMateriaSource.hpp"
 
-class AMateria : public IMateriaSource
+class AMateria
 {
         
     public:
@@ -26,10 +26,11 @@ class AMateria : public IMateriaSource
         AMateria(std::string const & type);
         AMateria(const AMateria &ref);
         AMateria &operator=(const AMateria &ref);
+        virtual ~AMateria();
         
         std::string const & getType() const; //Returns the materia type
         virtual AMateria* clone() const = 0;
-        virtual void use(ICharacter& target);
+        virtual void use(ICharacter& target) = 0;
         
     protected:
     

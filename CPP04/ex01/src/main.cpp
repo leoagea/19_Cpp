@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 03:24:19 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/24 17:22:49 by lagea            ###   ########.fr       */
+/*   Updated: 2024/09/25 14:18:53 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,31 +22,31 @@
 
 int main()
 {
-    // const Animal* meta = new Animal();
-    // const Animal* j = new Dog();
-    // const Animal* i = new Cat();
-    // std::cout << j->getType() << std::endl;
-    // std::cout << i->getType() << " " << std::endl;
-    // i->makeSound(); //will output the cat sound!
-    // j->makeSound();
-    // meta->makeSound();
+    // // const Animal* meta = new Animal();
+    // // const Animal* j = new Dog();
+    // // const Animal* i = new Cat();
+    // // std::cout << j->getType() << std::endl;
+    // // std::cout << i->getType() << " " << std::endl;
+    // // i->makeSound(); //will output the cat sound!
+    // // j->makeSound();
+    // // meta->makeSound();
 
-    // delete meta;
-    // delete j;
-    // delete i;
+    // // delete meta;
+    // // delete j;
+    // // delete i;
+    
+    // // std::cout << "\n\n";
+    
+    // // const WrongAnimal* a = new WrongAnimal();
+    // // const WrongAnimal* b = new WrongCat();
+    // // std::cout << b->getType() << std::endl;
+    // // b->makeSound();
+    // // a->makeSound();
+
+    // // delete a;
+    // // delete b;
     
     // std::cout << "\n\n";
-    
-    // const WrongAnimal* a = new WrongAnimal();
-    // const WrongAnimal* b = new WrongCat();
-    // std::cout << b->getType() << std::endl;
-    // b->makeSound();
-    // a->makeSound();
-
-    // delete a;
-    // delete b;
-    
-    std::cout << "\n\n";
     
     const Animal* animal[10];
     
@@ -62,7 +62,10 @@ int main()
     }
     for (int i=0; i < 10; i++)
     {
-        // delete animal[i];
+        if (animal[i]){  
+            delete animal[i]->getBrain();
+            delete animal[i];
+        }
     }
 
     std::cout << "\n\n";
@@ -77,5 +80,6 @@ int main()
     std::cout << "b: idea n 1 : " << b.getBrain()->getIdea(1) << std::endl;
     
     system("leaks Animal");
+
     return 0;
 }

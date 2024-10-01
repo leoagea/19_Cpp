@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 12:06:22 by lagea             #+#    #+#             */
-/*   Updated: 2024/10/01 16:54:03 by lagea            ###   ########.fr       */
+/*   Created: 2024/10/01 16:20:41 by lagea             #+#    #+#             */
+/*   Updated: 2024/10/01 16:54:32 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/AMateria.hpp"
+#include "../inc/Ice.hpp"
 
-AMateria::AMateria() : _type("")
+Ice::Ice()
 {
+	// std::cout << "Ice constructor called" << std::endl;
+	this->_type = "ice";
 }
 
-AMateria::AMateria(std::string const & type) : _type(type)
-{
-}
-
-AMateria::AMateria(const AMateria &ref)
+Ice::Ice(const Ice &ref)
 {
 	*this = ref;
 }
 
-AMateria &AMateria::operator=(const AMateria &ref)
+Ice &Ice::operator=(const Ice &ref)
 {
 	if (this != &ref){
 		this->_type = ref.getType();
@@ -33,11 +31,17 @@ AMateria &AMateria::operator=(const AMateria &ref)
 	return *this;
 }
 
-AMateria::~AMateria()
+Ice::~Ice()
 {
 }
 
-std::string const & AMateria::getType() const
+AMateria *Ice::clone() const
 {
-	return this->_type;
+	AMateria *tmp = new Ice(*this);
+	return tmp;
+}
+
+void Ice::use(ICharacter &target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

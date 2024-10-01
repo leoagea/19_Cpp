@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 12:06:22 by lagea             #+#    #+#             */
-/*   Updated: 2024/10/01 16:54:03 by lagea            ###   ########.fr       */
+/*   Created: 2024/10/01 15:38:03 by lagea             #+#    #+#             */
+/*   Updated: 2024/10/01 16:20:25 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/AMateria.hpp"
+#ifndef __CURE_HPP__
+#define __CURE_HPP__
 
-AMateria::AMateria() : _type("")
-{
-}
+#include "AMateria.hpp"
+#include <iostream>
 
-AMateria::AMateria(std::string const & type) : _type(type)
+class Cure : public AMateria
 {
-}
+	public:
+		Cure();
+		Cure(const Cure &ref);
+		Cure &operator=(const Cure &ref);
+		~Cure();
+		
+        AMateria* clone() const;
+		void use(ICharacter& target);
 
-AMateria::AMateria(const AMateria &ref)
-{
-	*this = ref;
-}
+};
 
-AMateria &AMateria::operator=(const AMateria &ref)
-{
-	if (this != &ref){
-		this->_type = ref.getType();
-	}
-	return *this;
-}
-
-AMateria::~AMateria()
-{
-}
-
-std::string const & AMateria::getType() const
-{
-	return this->_type;
-}
+#endif

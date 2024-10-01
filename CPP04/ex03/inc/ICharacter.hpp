@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 19:07:10 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/25 19:10:11 by lagea            ###   ########.fr       */
+/*   Updated: 2024/10/01 16:30:11 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #define __ICHARRACTER_HPP__
 
 #include <string>
-#include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter
 {

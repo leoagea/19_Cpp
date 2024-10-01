@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.cpp                                 :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 19:13:38 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/30 14:54:01 by lagea            ###   ########.fr       */
+/*   Created: 2024/10/01 15:29:43 by lagea             #+#    #+#             */
+/*   Updated: 2024/10/01 16:20:35 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/IMateriaSource.hpp"
+#ifndef __ICE_HPP__
+#define __ICE_HPP__
 
-// ~IMateriaSource()
-// {
-// }
+#include "AMateria.hpp"
+#include <iostream>
 
-void learnMateria(AMateria *)
+class Ice : public AMateria
 {
-    
-}
+	public:
+		Ice();
+		Ice(const Ice &ref);
+		Ice &operator=(const Ice &ref);
+		~Ice();
+		
+        AMateria* clone() const;
+		void use(ICharacter& target);
 
-AMateria *createMateria(std::string const &type)
-{
-    // new AMateria(type);
-}
+};
+
+#endif

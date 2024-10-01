@@ -6,29 +6,28 @@
 #    By: lagea <lagea@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/12 17:00:33 by lagea             #+#    #+#              #
-#    Updated: 2024/09/24 15:13:30 by lagea            ###   ########.fr        #
+#    Updated: 2024/10/01 16:51:02 by lagea            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= Animal
+NAME 		= AMateria
 
 SRC_DIR 	= src
 INC_DIR		= include
 OBJ_DIR 	= build
 
 SRC 		= 	$(SRC_DIR)/main.cpp \
-				$(SRC_DIR)/Animal.cpp \
-				$(SRC_DIR)/Dog.cpp \
-				$(SRC_DIR)/Cat.cpp \
-				$(SRC_DIR)/WrongAnimal.cpp \
-				$(SRC_DIR)/WrongCat.cpp \
-				$(SRC_DIR)/Brain.cpp \
+				$(SRC_DIR)/AMateria.cpp \
+				$(SRC_DIR)/Character.cpp \
+				$(SRC_DIR)/Cure.cpp \
+				$(SRC_DIR)/Ice.cpp \
+				$(SRC_DIR)/MateriaSource.cpp \
 				
 OBJ			= $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 DEPS 		= $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.d)
 CC 			= c++
 RM 			= rm -f
-CPPFLAGS 	= -Wall -Wextra -Werror -std=c++98 -pedantic
+CPPFLAGS 	= -Wall -Wextra -Werror -std=c++98 -pedantic #-fsanitize=address -g
 INCS 		= -I$(INC_DIR) -I.
 	
 all: $(NAME)
