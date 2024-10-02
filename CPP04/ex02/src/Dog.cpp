@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 16:40:51 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/24 17:04:32 by lagea            ###   ########.fr       */
+/*   Updated: 2024/10/02 22:51:45 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Dog.hpp"
 
-Dog::Dog() : _brain(nullptr)
+Dog::Dog() : _brain(NULL)
 {
     std::cout << "Dog Default constructor called." << std::endl;
     this->_type = "dog";

@@ -6,13 +6,13 @@
 /*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 17:20:02 by lagea             #+#    #+#             */
-/*   Updated: 2024/10/02 22:41:16 by lagea            ###   ########.fr       */
+/*   Updated: 2024/10/02 22:51:45 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Cat.hpp"
 
-Cat::Cat() : _brain(nullptr)
+Cat::Cat() : _brain(NULL)
 {
     this->_type = "cat";
     this->_brain = new Brain();
@@ -50,5 +50,5 @@ Brain *Cat::getBrain(void) const
 {
     if (this->_brain)
         return this->_brain;
-    return (nullptr);
+    return (NULL);
 }

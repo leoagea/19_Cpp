@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 02:06:22 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/19 12:46:03 by lagea            ###   ########.fr       */
+/*   Updated: 2024/10/02 22:51:45 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Zombie* zombieHorde( int N, std::string name )
 {
     if (N <= 0)
-        return nullptr;
+        return NULL;
         
     Zombie *zombieArr = new Zombie[N];
     for(int i = 0; i < N; i++)

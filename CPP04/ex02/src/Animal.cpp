@@ -50,5 +50,5 @@ void Animal::makeSound() const
 
 Brain *Animal::getBrain() const
 {
-    return (nullptr);
+    return (NULL);
 }

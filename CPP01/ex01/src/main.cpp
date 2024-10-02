@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 01:18:04 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/19 15:34:26 by lagea            ###   ########.fr       */
+/*   Updated: 2024/10/02 22:51:45 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int main()
         if (!name.empty())
         {
             Zombie *horde = zombieHorde(num, name);
-            if (horde == nullptr){
+            if (horde == NULL){
                 std::cout << "Invalid argument: cannot allocate 0 zombies" << std::endl;
                 return 0;
             }

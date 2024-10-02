@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 17:25:15 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/19 15:26:30 by lagea            ###   ########.fr       */
+/*   Updated: 2024/10/02 22:51:45 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/HumanB.hpp"
 
-HumanB::HumanB(const std::string name) : _name(name), _weapon(nullptr)
+HumanB::HumanB(const std::string name) : _name(name), _weapon(NULL)
 {
 }
 
