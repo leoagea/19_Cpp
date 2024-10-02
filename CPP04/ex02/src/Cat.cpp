@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 17:20:02 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/24 17:04:53 by lagea            ###   ########.fr       */
+/*   Updated: 2024/10/02 22:51:45 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Cat.hpp"
 
-Cat::Cat() : _brain(nullptr)
+Cat::Cat() : _brain(NULL)
 {
     this->_type = "cat";
     this->_brain = new Brain();
@@ -30,7 +30,7 @@ Cat &Cat::operator=(const Cat &ref)
     if (this != &ref)
     {
         this->_type = ref._type;
-        this->_brain = ref._brain;
+        this->_brain = new Brain(*ref._brain);
     }
     std::cout << "Cat Copy assignment constructor called." << std::endl;
     return *this;
@@ -50,5 +50,5 @@ Brain *Cat::getBrain(void) const
 {
     if (this->_brain)
         return this->_brain;
-    return (nullptr);
+    return (NULL);
 }

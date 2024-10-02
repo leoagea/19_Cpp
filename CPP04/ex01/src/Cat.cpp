@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea <lagea@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 17:20:02 by lagea             #+#    #+#             */
-/*   Updated: 2024/09/24 17:04:53 by lagea            ###   ########.fr       */
+/*   Updated: 2024/10/02 22:41:16 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Cat &Cat::operator=(const Cat &ref)
     if (this != &ref)
     {
         this->_type = ref._type;
-        this->_brain = ref._brain;
+        this->_brain = new Brain(*ref._brain);
     }
     std::cout << "Cat Copy assignment constructor called." << std::endl;
     return *this;
