@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea <lagea@student.s19.be>               +#+  +:+       +#+        */
+/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 16:23:11 by lagea             #+#    #+#             */
-/*   Updated: 2024/10/31 16:59:25 by lagea            ###   ########.fr       */
+/*   Updated: 2024/10/31 23:55:01 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 145, 137, target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45, target)
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &ref) : AForm("RobotomyRequestForm", 145, 137, ref.getTarget())
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &ref) : AForm("RobotomyRequestForm", 72, 45, ref.getTarget())
 {
     *this = ref;
 }

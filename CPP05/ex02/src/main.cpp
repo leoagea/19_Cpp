@@ -22,6 +22,7 @@ int main()
 {
 	Bureaucrat bob("Bob",1);
 	ShrubberyCreationForm test("test");
+	std::cout << test;
 	try {
 		test.beSigned(bob);
 		// test.execute(bob);
@@ -35,6 +36,7 @@ int main()
 
 	Bureaucrat alice("Alice",1);
 	RobotomyRequestForm test1("Bob");
+	std::cout << test1;
 	try {
 		test1.beSigned(alice);
 		test1.execute(alice);
@@ -47,6 +49,7 @@ int main()
 
 	Bureaucrat mallory("Mallory",1);
 	PresidentialPardonForm test2("Bob");
+	std::cout << test2;
 	try {
 		test2.beSigned(mallory);
 		test2.execute(mallory);

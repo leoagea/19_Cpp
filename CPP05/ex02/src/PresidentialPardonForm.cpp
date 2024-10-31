@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea <lagea@student.s19.be>               +#+  +:+       +#+        */
+/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 16:22:59 by lagea             #+#    #+#             */
-/*   Updated: 2024/10/31 16:59:51 by lagea            ###   ########.fr       */
+/*   Updated: 2024/10/31 23:55:48 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 145, 137, target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5, target)
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &ref) : AForm("PresidentialPardonForm", 145, 137, ref.getTarget())
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &ref) : AForm("PresidentialPardonForm", 25, 5, ref.getTarget())
 {
     *this = ref;
 }
