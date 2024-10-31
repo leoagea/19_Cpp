@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 17:19:53 by lagea             #+#    #+#             */
-/*   Updated: 2024/10/30 18:24:35 by lagea            ###   ########.fr       */
+/*   Updated: 2024/10/31 12:32:18 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define __FORM_HPP__
 
 #include <iostream>
-// #include "Bureaucrat.hpp"
 
 class Bureaucrat;
 

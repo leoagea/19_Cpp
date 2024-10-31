@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 18:24:47 by lagea             #+#    #+#             */
-/*   Updated: 2024/10/30 18:44:32 by lagea            ###   ########.fr       */
+/*   Updated: 2024/10/31 13:08:00 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,6 @@ unsigned int Form::getExecGrade() const
 
 void Form::beSigned(Bureaucrat &ref)
 {
-    // std::cout << "Bureaucrat grade = " << ref.getGrade() << std::endl;
-    // std::cout << "Form sign grade = " << this->_signGrade << std::endl;
     if (ref.getGrade() <= this->_signGrade){
         if (this->_isSigned == 0){
             this->_isSigned = 1;
