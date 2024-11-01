@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 23:00:26 by lagea             #+#    #+#             */
-/*   Updated: 2024/10/31 15:34:18 by lagea            ###   ########.fr       */
+/*   Updated: 2024/11/01 13:32:19 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Bureaucrat::Bureaucrat(std::string name, unsigned int grade) : _name(name)
 	if (grade < 1)
 		throw (Bureaucrat::GradeTooHighException());
 	else if (grade > 150)
-		throw (Bureaucrat::GradeTooHighException());
+		throw (Bureaucrat::GradeTooLowException());
 	else
 		this->_grade = grade;
 }
@@ -72,7 +72,7 @@ void Bureaucrat::incrementGrade()
 void Bureaucrat::decrementGrade()
 {
 	std::cout << "Decrement grade from " << _name << " by 1." << std::endl;
-	if (this->_grade + 1> 150){
+	if (this->_grade + 1 > 150){
 		throw (Bureaucrat::GradeTooLowException());
 	}
 	else

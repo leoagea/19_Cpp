@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
+/*   By: lagea <lagea@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 23:00:48 by lagea             #+#    #+#             */
-/*   Updated: 2024/10/02 23:44:24 by lagea            ###   ########.fr       */
+/*   Updated: 2024/11/01 12:52:15 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ class Bureaucrat
 		};
 		
 	private:
-		std::string _name;
+		const std::string _name;
 		unsigned int _grade; //1 highest, 150 lowest
 		
 };

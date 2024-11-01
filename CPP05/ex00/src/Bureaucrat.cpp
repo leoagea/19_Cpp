@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
+/*   By: lagea <lagea@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 23:00:26 by lagea             #+#    #+#             */
-/*   Updated: 2024/10/02 23:46:44 by lagea            ###   ########.fr       */
+/*   Updated: 2024/11/01 13:33:03 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,19 @@ Bureaucrat::Bureaucrat(std::string name, unsigned int grade) : _name(name)
 	if (grade < 1)
 		throw (Bureaucrat::GradeTooHighException());
 	else if (grade > 150)
-		throw (Bureaucrat::GradeTooHighException());
+		throw (Bureaucrat::GradeTooLowException());
 	else
 		this->_grade = grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &ref)
+Bureaucrat::Bureaucrat(const Bureaucrat &ref) : _name(ref.getName())
 {
-	std::cout << "Copy constructor called." << std::endl;
 	*this = ref;
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &ref)
 {
-	std::cout << "Copy assignment constructor called." << std::endl;
 	if (this != &ref){
-		this->_name = ref._name;
 		this->_grade = ref._grade;
 	}
 	return *this;
@@ -71,7 +68,7 @@ void Bureaucrat::incrementGrade()
 void Bureaucrat::decrementGrade()
 {
 	std::cout << "Decrement grade from " << _name << " by 1." << std::endl;
-	if (this->_grade + 1> 150){
+	if (this->_grade + 1 > 150){
 		throw (Bureaucrat::GradeTooLowException());
 	}
 	else
