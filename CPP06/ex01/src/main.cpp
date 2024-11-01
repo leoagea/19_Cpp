@@ -6,12 +6,16 @@
 /*   By: lagea <lagea@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 23:00:13 by lagea             #+#    #+#             */
-/*   Updated: 2024/11/01 17:58:38 by lagea            ###   ########.fr       */
+/*   Updated: 2024/11/01 18:37:56 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/Serializer.hpp"
 
+/* Reinterpret cast :
+        used to convert a pointer type to another pointer type
+        or to convert a pointer type to another classic type (ex: integer)
+*/
 int main()
 {
     Data originalData;
