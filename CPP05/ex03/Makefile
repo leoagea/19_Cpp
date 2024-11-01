@@ -6,7 +6,7 @@
 #    By: lagea <lagea@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/12 17:00:33 by lagea             #+#    #+#              #
-#    Updated: 2024/10/31 16:58:18 by lagea            ###   ########.fr        #
+#    Updated: 2024/11/01 13:43:50 by lagea            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC 		= 	$(SRC_DIR)/main.cpp \
 				$(SRC_DIR)/ShrubberyCreationForm.cpp \
 				$(SRC_DIR)/RobotomyRequestForm.cpp \
 				$(SRC_DIR)/PresidentialPardonForm.cpp \
+				$(SRC_DIR)/Intern.cpp \
 				
 OBJ			= $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 DEPS 		= $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.d)
