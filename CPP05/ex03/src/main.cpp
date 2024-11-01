@@ -70,8 +70,9 @@ int main()
 
 	{
 		Intern *someRandomIntern = new Intern();
-		AForm* rrf = someRandomIntern->makeForm("RobotomyRequestForm", "Bender");
-		rrf->beSigned(*a);
+		AForm* rrf = someRandomIntern->makeForm("RobotoyRequestForm", "Bender");
+		if (rrf)
+			rrf->beSigned(*a);
 	}
 	delete a;
 	return (0);
