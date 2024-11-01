@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 12:34:48 by lagea             #+#    #+#             */
-/*   Updated: 2024/10/31 14:34:07 by lagea            ###   ########.fr       */
+/*   Updated: 2024/11/01 13:31:53 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@ AForm::AForm(const std::string name, const unsigned int signGrade, const unsigne
 {
     std::cout << "Form " << this->_name << " created." << std::endl;
     if (this->_signGrade < 1 || this->_execGrade < 1)
-        throw (AForm::GradeTooLowException());
-    else if (this->_signGrade > 150 || this->_execGrade > 150)
         throw (AForm::GradeTooHighException());
+    else if (this->_signGrade > 150 || this->_execGrade > 150)
+        throw (AForm::GradeTooLowException());
 }
 
 AForm::AForm(const AForm &ref) : _name(ref._name + "_copy"), _isSigned(ref._isSigned), _signGrade(ref._signGrade), _execGrade(ref._execGrade)
 {
     std::cout << "Form " << this->_name << " created." << std::endl;
     if (this->_signGrade < 1 || this->_execGrade < 1)
-        throw (AForm::GradeTooLowException());
-    else if (this->_signGrade > 150 || this->_execGrade > 150)
         throw (AForm::GradeTooHighException());
+    else if (this->_signGrade > 150 || this->_execGrade > 150)
+        throw (AForm::GradeTooLowException());
 }
 
 AForm &AForm::operator=(const AForm &ref)

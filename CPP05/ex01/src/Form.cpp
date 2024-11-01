@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 18:24:47 by lagea             #+#    #+#             */
-/*   Updated: 2024/10/31 13:08:00 by lagea            ###   ########.fr       */
+/*   Updated: 2024/11/01 12:57:38 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,18 @@ Form::Form(const std::string name, const unsigned int signGrade, const unsigned 
 {
     std::cout << "Form " << this->_name << " created." << std::endl;
     if (this->_signGrade < 1 || this->_execGrade < 1)
-        throw (Form::GradeTooLowException());
-    else if (this->_signGrade > 150 || this->_execGrade > 150)
         throw (Form::GradeTooHighException());
+    else if (this->_signGrade > 150 || this->_execGrade > 150)
+        throw (Form::GradeTooLowException());
 }
 
 Form::Form(const Form &ref) : _name(ref._name + "_copy"), _isSigned(ref._isSigned), _signGrade(ref._signGrade), _execGrade(ref._execGrade)
 {
     std::cout << "Form " << this->_name << " created." << std::endl;
     if (this->_signGrade < 1 || this->_execGrade < 1)
-        throw (Form::GradeTooLowException());
-    else if (this->_signGrade > 150 || this->_execGrade > 150)
         throw (Form::GradeTooHighException());
+    else if (this->_signGrade > 150 || this->_execGrade > 150)
+        throw (Form::GradeTooLowException());
 }
 
 Form &Form::operator=(const Form &ref)
@@ -70,6 +70,7 @@ void Form::beSigned(Bureaucrat &ref)
     if (ref.getGrade() <= this->_signGrade){
         if (this->_isSigned == 0){
             this->_isSigned = 1;
+            ref.signForm(*this);
         }
         else{
             std::cout << this->_name << " is already signed." << std::endl;
@@ -85,7 +86,6 @@ void Form::beSigned(Bureaucrat &ref)
         ref.signForm(*this);   
         throw (Form::GradeTooLowException());
     }
-    ref.signForm(*this);
 }
 
 std::ostream &operator<<(std::ostream &out, const Form &ref)
