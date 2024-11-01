@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 23:00:13 by lagea             #+#    #+#             */
-/*   Updated: 2024/10/30 18:46:12 by lagea            ###   ########.fr       */
+/*   Updated: 2024/11/01 13:00:10 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int main()
     Form taxForm("TaxForm", 50, 25);
     try
     {
-    	Form fakeForm("TaxForm", 160, 25);
+    	Form fakeForm("fakeForm", 160, 25);
         std::cout << taxForm << std::endl;
     }
     catch (std::exception &e)
@@ -115,8 +115,8 @@ int main()
 	std::cout << std::endl;
 	try
     {
-    	Form fakeForm("TaxForm", 50, 0);
-        std::cout << taxForm << std::endl;
+    	Form dutyForm("dutyForm", 50, 0);
+        std::cout << dutyForm << std::endl;
     }
     catch (std::exception &e)
     {

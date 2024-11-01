@@ -19,17 +19,6 @@
 
 int main()
 {
-	Bureaucrat bob("Bob",1);
-	ShrubberyCreationForm test("test");
-	try {
-		test.beSigned(bob);
-		// test.execute(bob);
-		bob.executeForm(test);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
 	std::cout << std::endl;
 
 	Bureaucrat alice("Alice",1);
@@ -71,14 +60,19 @@ int main()
 		std::cout << std::endl;
 
 		a->executeForm(*c);
-		// c->execute(*a);
 		std::cout << std::endl;
 
 		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
-		delete a;
 		delete b;
 		delete c;
 		delete z;
 		std::cout << std::endl;
+
+	{
+		Intern *someRandomIntern = new Intern();
+		AForm* rrf = someRandomIntern->makeForm("RobotomyRequestForm", "Bender");
+		rrf->beSigned(*a);
+	}
+	delete a;
 	return (0);
 }
