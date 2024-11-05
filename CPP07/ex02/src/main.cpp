@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lagea < lagea@student.s19.be >             +#+  +:+       +#+        */
+/*   By: lagea <lagea@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 23:00:13 by lagea             #+#    #+#             */
-/*   Updated: 2024/11/03 23:10:15 by lagea            ###   ########.fr       */
+/*   Updated: 2024/11/05 17:55:57 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main()
 		b[2] = 5;
 		try {
 			b[6] = 0;
-		} catch(std::exception e) {
+		} catch(std::exception &e) {
 			std::cout << "Error: " << e.what() << std::endl;
 		}
 		std::cout << a.size() << "-" << b.size() << std::endl;
@@ -58,7 +58,7 @@ int main()
 		b[2] = "Michel";
 		try {
 			b[6] = "Erreur";
-		} catch(std::exception e) {
+		} catch(std::exception &e) {
 			std::cout << "Error: " << e.what() << std::endl;
 		}
 		std::cout << a.size() << "-" << b.size() << std::endl;
