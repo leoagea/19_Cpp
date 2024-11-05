@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 17:36:55 by lagea             #+#    #+#             */
-/*   Updated: 2024/11/01 18:03:06 by lagea            ###   ########.fr       */
+/*   Updated: 2024/11/05 14:49:20 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Serializer
         
     private:
         Serializer() {}
-        Serializer(const Serializer &ref) {}
+        Serializer(const Serializer &ref);
         Serializer &operator=(const Serializer &ref);
         ~Serializer();
 };
