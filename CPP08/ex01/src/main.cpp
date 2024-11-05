@@ -6,68 +6,51 @@
 /*   By: lagea <lagea@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 23:00:13 by lagea             #+#    #+#             */
-/*   Updated: 2024/11/04 15:23:56 by lagea            ###   ########.fr       */
+/*   Updated: 2024/11/05 17:11:28 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/Array.hpp"
+#include "../inc/Span.hpp"
 
 #include <iostream>
 
 int main()
 {
-	{
-		std::cout << std::endl;
+	try
+    {
+        Span sp(5);
 
-		Array<int> a;
-		Array<int> b(4);
-		Array<int> c(2);
-		Array<int> d(c);
-		c[0] = 10;
-		std::cout << "a:" << a << std::endl;
-		std::cout << "b:" << b << std::endl;
-		std::cout << "c:" <<c << std::endl;
-		c = b;
-		b[2] = 5;
-		try {
-			b[6] = 0;
-		} catch(std::exception e) {
-			std::cout << "Error: " << e.what() << std::endl;
-		}
-		std::cout << a.size() << "-" << b.size() << std::endl;
-		std::cout << "b:" << b << std::endl;
-		std::cout << "c:" <<c << std::endl;
-		std::cout << "d:" <<d << std::endl;
-	}
+        sp.addNumber(6);
+        sp.addNumber(3);
+        sp.addNumber(17);
+        sp.addNumber(9);
+        sp.addNumber(11);
 
-		std::cout << std::endl;
-		std::cout << "============================" << std::endl;
-		std::cout << std::endl;
-	
-	{
-		Array<std::string> a;
-		Array<std::string> b(4);
-		Array<std::string> c(2);
-		Array<std::string> d(a);
+        std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
+        std::cout << "Longest span: " << sp.longestSpan() << std::endl;
 
-		c[0] = "Eric";
-		std::cout << "a:" <<a << std::endl;
-		std::cout << "b:" <<b << std::endl;
-		std::cout << "c:" <<c << std::endl;
-		c = b;
-		b[2] = "Michel";
-		try {
-			b[6] = "Erreur";
-		} catch(std::exception e) {
-			std::cout << "Error: " << e.what() << std::endl;
-		}
-		std::cout << a.size() << "-" << b.size() << std::endl;
-		std::cout << "b:" <<b << std::endl;
-		std::cout << "c:" <<c << std::endl;
-		std::cout << "d:" <<d << std::endl;
+        sp.addNumber(42);
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
 
-		std::cout << std::endl;
-
-	}
-
+    try
+    {
+        Span largeSpan(10000);
+        srand(static_cast<unsigned int>(time(0)));
+        std::vector<int> randomNumbers;
+        for (int i = 0; i < 10000; ++i)
+        {
+            randomNumbers.push_back(rand());
+        }
+        largeSpan.addRange(randomNumbers.begin(), randomNumbers.end());
+        std::cout << "Shortest span (large test): " << largeSpan.shortestSpan() << std::endl;
+        std::cout << "Longest span (large test): " << largeSpan.longestSpan() << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
 }

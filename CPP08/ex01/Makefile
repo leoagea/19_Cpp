@@ -3,20 +3,21 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lagea < lagea@student.s19.be >             +#+  +:+       +#+         #
+#    By: lagea <lagea@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/12 17:00:33 by lagea             #+#    #+#              #
-#    Updated: 2024/11/03 19:19:18 by lagea            ###   ########.fr        #
+#    Updated: 2024/11/05 14:48:23 by lagea            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= Array
+NAME 		= Span
 
 SRC_DIR 	= src
 INC_DIR		= include
 OBJ_DIR 	= build
 
 SRC 		= 	$(SRC_DIR)/main.cpp \
+				$(SRC_DIR)/Span.cpp
 				
 OBJ			= $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 DEPS 		= $(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.d)

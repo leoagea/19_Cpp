@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 15:49:27 by lagea             #+#    #+#             */
-/*   Updated: 2024/11/04 16:57:28 by lagea            ###   ########.fr       */
+/*   Updated: 2024/11/05 14:47:47 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,26 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <limits>
+
+class NotEnoughSpace : public std::exception
+{
+	public :
+		const char *what() const throw()
+		{
+			return "Not enough space in vector";
+		}	
+};
+
+class NotEnoughElements : public std::exception
+{
+	public : 
+		const char *what() const throw()
+		{
+			return "Not enough elements in vector. No span can be found";
+		}
+};
 
 class Span
 {
@@ -26,71 +46,23 @@ class Span
 		
 		void addNumber(int value);
 		
+		template <typename Iterator>
+		void addRange(Iterator begin, Iterator end)
+   		{
+			if (std::distance(begin, end) > static_cast<int>(_maxSize - _vect.size()))
+			{
+				throw NotEnoughSpace();
+			}
+			_vect.insert(_vect.end(), begin, end);
+    	}	
+		
 		int shortestSpan() const;
 		int longestSpan() const;
 		
 	private:
-		std::vector<int> *_vect;
-		unsigned int _n;
-		static unsigned int _nbrInVect;
+		std::vector<int> _vect;
+		unsigned int _maxSize;
 };
 
-class NotEnoughSpace : std::exception
-{
-	const char *what() const throw()
-	{
-		return "Not enough space in vector";
-	}	
-};
-
-class NotEnoughElements : std::exception
-{
-	const char *what() const throw()
-	{
-		return "Not enough elements in vector. No span can be found";
-	}
-};
-
-unsigned int Span::_nbrInVect = 0;
-
-Span::Span(unsigned int N) : _n(N)
-{
-	_vect = new std::vector<int>[_n];
-}
-
-Span::Span(const Span &ref)
-{
-}
-
-Span &Span::operator=(const Span &ref)
-{
-	
-}
-
-Span::~Span()
-{
-	delete[] _vect;
-}
-
-void Span::addNumber(int value)
-{
-	if (_nbrInVect >= _n)
-		throw (NotEnoughSpace());
-	_vect->push_back(value);
-	_nbrInVect++;
-	_vect>
-}
-
-int Span::shortestSpan() const
-{
-	if (_nbrInVect <= 1)
-		throw (NotEnoughElements());
-}
-
-int Span::longestSpan() const
-{
-	if (_nbrInVect <= 1)
-		throw (NotEnoughElements());
-}
 
 #endif
