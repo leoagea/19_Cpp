@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lagea < lagea@student.s19.be >             +#+  +:+       +#+         #
+#    By: lagea <lagea@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/12 17:00:33 by lagea             #+#    #+#              #
-#    Updated: 2024/11/03 19:19:18 by lagea            ###   ########.fr        #
+#    Updated: 2024/11/06 12:54:13 by lagea            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= Array
+NAME 		= Easyfind
 
 SRC_DIR 	= src
 INC_DIR		= include

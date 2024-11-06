@@ -6,11 +6,11 @@
 #    By: lagea <lagea@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/12 17:00:33 by lagea             #+#    #+#              #
-#    Updated: 2024/11/05 18:28:25 by lagea            ###   ########.fr        #
+#    Updated: 2024/11/06 12:54:34 by lagea            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME 		= Span
+NAME 		= MutantStack
 
 SRC_DIR 	= src
 INC_DIR		= include
