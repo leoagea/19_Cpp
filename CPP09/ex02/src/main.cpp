@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 23:00:13 by lagea             #+#    #+#             */
-/*   Updated: 2024/11/12 13:26:16 by lagea            ###   ########.fr       */
+/*   Updated: 2024/11/12 17:55:32 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,13 @@ int main(int ac, char **av)
     
     std::cout << "Time to process a range of " << my_list.size() << " elements with List: " << end - start << " us." << std::endl;
 
+    std::cout << "Before: ";
+    displayDeque(my_deque);
     start = get_timestamp();
     pMergeSortDeque(my_deque);
     end = get_timestamp();
-    
+    std::cout << "After: ";
+    displayDeque(my_deque);
     std::cout << "Time to process a range of " << my_deque.size() << " elements with Deque: " << end - start << " us." << std::endl;
 
     return 0;

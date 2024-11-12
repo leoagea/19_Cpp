@@ -6,7 +6,7 @@
 /*   By: lagea <lagea@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 12:42:28 by lagea             #+#    #+#             */
-/*   Updated: 2024/11/12 17:29:08 by lagea            ###   ########.fr       */
+/*   Updated: 2024/11/12 17:56:56 by lagea            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -277,5 +277,5 @@ std::deque<int> pMergeSortDeque(std::deque<int> &deq)
 
     deq.clear();
     deq = rightNumbers;
-    return rightNumbers;
+    return deq;
 }
